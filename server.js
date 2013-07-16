@@ -18,7 +18,6 @@ http.createServer(app).listen(port, ipaddr, function(){
 });
 
 // DB
-
 var connection = mysql.createConnection({
   host     : process.env.OPENSHIFT_MYSQL_DB_HOST,
   user     : process.env.OPENSHIFT_MYSQL_DB_USERNAME,
@@ -51,7 +50,6 @@ app.post('/', function (req, res) {
         else res.send('success');
     });
 });
-
 // /DB
 
 app.engine('html', require('ejs').renderFile);

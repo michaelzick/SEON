@@ -25,6 +25,13 @@ var connection = mysql.createConnection({
   database : process.env.OPENSHIFT_GEAR_NAME
 });
 
+// FOR LOCAL DEVELOPMENT, CHANGE THE ABOVE TO:
+// var connection = mysql.createConnection({
+//   socketPath  : '/Applications/MAMP/tmp/mysql/mysql.sock', //<-- Make sure you have MAMP installed.
+//   user     : 'YOUR MYSQL USERNAME',
+//   password : 'YOUR MYSQL PASSWORD'
+// });
+
 app.use(express.bodyParser());
 
 app.get('/', function(req, res){

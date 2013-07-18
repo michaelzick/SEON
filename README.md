@@ -14,10 +14,18 @@ Then create a Node.JS app, and use this Git source link (https or ssh) to direct
 
 Next, add two cartridges: MySQL and phpMyAdmin.
 
-Finally, use Git commands in Terminal or use a Git management app (SourceTree, Tower, etc) to pull the repository to your local machine.
+Seting up the database
+----------------------
 
-Installing Node and other components
-------------------------------------
+I've included an SQL file called "sampledatabase.sql" in "your_app_name/db/".
+
+Go to the phpMyAdmin URL for your OpenShift app, and import this SQL file. It will appear as "classicmodels".
+
+Local Setup Instructions
+========================
+
+Installing Node, MAMP and Supervisor
+-------------------------------------
 
 Go to [nodejs.org](http://nodejs.org/) and download the package for OS X.
 
@@ -27,15 +35,18 @@ After you've installed Node, open up Terminal and install Supervisor, the file-w
 
 This installs Supervisor into "/usr/local/bin/", and is available globally.
 
-Seting up the database
-----------------------
+Install [MAMP](http://www.mamp.info/en/index.html) if you haven't done so. This will set up a MySQL, PHP and local domain server for your Mac.
 
-I've included an SQL file called "sampledatabase.sql" in "your_app_name/db/".
-
-Open up the phpMyAdmin for your OpenShift app and import this SQL file. It will appear as "classicmodels".
+From MAMP, open up the phpMyAdmin for your localhost and import classicmodels.sql.
 
 Running the app
 ---------------
+
+Use Git commands in Terminal or use a Git management app (SourceTree, Tower, etc) to pull the repository to your local machine.
+
+In your Git management app, create a new branch from master.
+
+In server.js, uncomment the local connection code and comment-out the OpenShift connection code right above it.
 
 In Terminal, go to your project root:
 

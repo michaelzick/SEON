@@ -1,2 +1,2 @@
 #!/bin/bash
-restart
+$OPENSHIFT_APP_CTL_SCRIPT restart

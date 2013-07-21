@@ -1,3 +1,2 @@
 #!/bin/bash
-rhc app restart -a seon
-date >> ${OPENSHIFT_PHP_LOG_DIR}/restart.log
+restart -a seon

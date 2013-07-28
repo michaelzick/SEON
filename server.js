@@ -70,7 +70,7 @@ app.get('/', function(req, res){
     if (err) {
       throw err;
     } else {
-       for (i=0; i<5; i++)
+       for (i=0; i<result.length; i++)
         {
             surfers[i] = result[i];
         }
@@ -80,7 +80,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/', function (req, res) {
-  connection.query('insert into customers (customerNumber, contactFirstName, contactLastName) values ("' + req.body.custNum + '", "' + req.body.firstName + '", "' + req.body.lastName + '")',
+  connection.query('insert into surfers (number, firstName, lastName) values ("' + req.body.num + '", "' + req.body.firstName + '", "' + req.body.lastName + '")',
     function (err, results, fields) {
         if (err) throw err;
         else res.send('success');

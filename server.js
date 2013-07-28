@@ -63,18 +63,18 @@ app.get('/', function(req, res){
   // And run this on every connection as soon as it is created.
   // replaceConnectionOnDisconnect(connection);
 
-  connection.query('use ' + 'classicmodels');
-  connection.query('SELECT customerNumber, contactFirstName, contactLastName FROM customers ORDER BY customerNumber', function(err, result, fields){
+  connection.query('use ' + 'seon');
+  connection.query('SELECT number, firstName, lastName FROM surfers ORDER BY number', function(err, result, fields){
     replaceConnectionOnDisconnect(connection);
-    var people = [];
+    var surfers = [];
     if (err) {
       throw err;
     } else {
        for (i=0; i<5; i++)
         {
-            people[i] = result[i];
+            surfers[i] = result[i];
         }
-      res.render('index.html', {people: people});
+      res.render('index.html', {surfers: surfers});
     }
   });
 });

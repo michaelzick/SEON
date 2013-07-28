@@ -17,9 +17,9 @@ Next, add two cartridges: MySQL and phpMyAdmin.
 Seting up the database
 ----------------------
 
-I've included an SQL file called "sampledatabase.sql" in "your_app_name/db/".
+I've included an SQL file called "surfers.sql" in "your_app_name/db/".
 
-Go to the phpMyAdmin URL for your OpenShift app, and import this SQL file. It will appear as "classicmodels".
+Go to the phpMyAdmin URL for your OpenShift app, select the "seon" db on the left and import this SQL file.
 
 Local Setup Instructions
 ========================
@@ -37,7 +37,7 @@ This installs Supervisor into "/usr/local/bin/", and is available globally.
 
 Install [MAMP](http://www.mamp.info/en/index.html) if you haven't done so. This will set up a MySQL, PHP and local domain server for your Mac.
 
-From MAMP, open up the phpMyAdmin for your localhost and import classicmodels.sql.
+From MAMP, open up the phpMyAdmin for your localhost. Create a new database called "seon" and import surfers.sql into this db.
 
 Running the app
 ---------------
